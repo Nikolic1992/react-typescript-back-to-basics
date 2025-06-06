@@ -2,6 +2,8 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import StateHook from "./components/StateHook";
+import Objects from "./components/Objects";
 
 // ✅ MAIN APPLICATION COMPONENT
 // This is the root component of your app.
@@ -52,6 +54,8 @@ function App() {
         <Button color="danger" onClick={handleToggleAlert}>
           CLICK ME
         </Button>
+        <StateHook />
+        <Objects />
       </div>
     </div>
   );

@@ -10,12 +10,14 @@ import ReactHookForm from "./forms/ReactHookForm";
 import FormValidation from "./forms/FormValidation";
 import ZodSchemaBasedValidation from "./forms/ZodSchemaBasedValidation";
 import Arrays from "./components/Arrays";
+import ProductList from "./components/ProductList";
 
 // ✅ MAIN APPLICATION COMPONENT
 // This is the root component of your app.
 // It combines reusable components: ListGroup, Alert, and Button.
 
 function App() {
+  const [category, setCategory] = useState("");
   // ✅ State to control the visibility of the Alert component
   const [toggleAlert, setToggleAlert] = useState(false);
 
@@ -68,6 +70,16 @@ function App() {
         <ReactHookForm />
         <FormValidation />
         <ZodSchemaBasedValidation />
+        {/* Here we are showing the useEffect re-rendering with ProductList component */}
+        <select
+          className="form-select"
+          onChange={(event) => setCategory(event.target.value)}
+        >
+          <option value=""></option>
+          <option value="Clothing">Clothing</option>
+          <option value="Household">Household</option>
+        </select>
+        <ProductList category={category} />
       </div>
     </div>
   );
